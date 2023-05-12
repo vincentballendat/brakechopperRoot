@@ -1,0 +1,3 @@
+https://www.electronicdesign.com/power-management/whitepaper/21126111/how-to-design-an-optimal-electronic-load-for-highcurrent-lowvoltage-power-supplies-part-1
+(Berechnung Shunt)
+

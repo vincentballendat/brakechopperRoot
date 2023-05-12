@@ -1,0 +1,66 @@
+1. Footprints für Batterieanschraubpunkte
+	- Eine große Kupferfläche
+	- Durchgehende Kupferöffnung
+	- Aufgerasterte Pastenöffnung mit kleinen Stegen
+2. Separate enable pro Opamp
+3. Sensoren:
+	- Shunt nachrüsten
+	- Messung von UBAT
+	- Temperaturen: PCB, FET, Gehäuse
+	- NTC Modell: NCU15XH103E6SRC
+	
+	 
+4. Layout DCDC Converter (beide Converter)
+	- 220nF als C6/C7 (Kondensator an BS), 0402
+	- EN Pin mit Spannungsteiler 470k oben, 100k unten
+	- 100nF an Ein- und Ausgang
+	- Spule nach 2512 Footprints, 4.7uH
+
+5. Allgemein
+	- 100nF und 1u decoupling Capacitors an jedem IC (MCU, CAN Transceiver, Current Sense Amplifier, OpAmps, etc.)
+	- Pin Header Spacing 100mil / 2.54mm / 1/10 Inch ;-)
+
+6. MCU:
+	- NRST Beschaltung
+	- Decoupling Caps 100nF
+	- VDDA Filtern
+	
+7. Steckverbinder:
+	- JST ZH (1.5mm Pitch) für Can und Fan
+	- 
+	
+8. Fan:
+	- Schaltplan cleaner, Ground unten und richtiges Symbol
+
+9. Power Stage:
+	- RC Glied einbauen, 100R, 100n
+	- Kombi aus R und C in Serie entfernen
+	- Abblockkondensatoren 100nF
+	
+10. Strommessung:
+	- INA181A1 in Low Side Configuration mit 10mOhm Shunt
+	- Direkt an "Minus" des Batterieanschlusses
+
+11. Temperaturmessung:
+	- PCB
+	- FET
+	- Gehäuse
+	- Gehäuse und FET über Stecker => JST XH 2 Polig
+	- PCB ist einfach ein NTC auf der Platine
+	
+12. Testpads
+	- 100mil/2.54mm Grid
+	- Relevante Signale
+		- GND
+		- Jedes Spannungsrail
+		- CAN RX/TX und Hi/Lo
+		- Shutdown Pins
+		- Ausgang DAC zu den OpAmps
+		- UART
+	
+13. Details:
+	- LEDs für Debugging (0603 Package), Vorwiderstand 10k
+	- LEDs für Voltage Rails (VBAT, 12V, 5V, 3V3)
+	- LEDs an Shutdown Pins (vom Portpin nach 3V3, dass die Logik die gleiche ist!)
+	- Status LEDs nach aussen (5mm THT und SMD parallel, es wird nur eine bestückt): "Bereit", "Aktiv", Fehler,
+	- 
